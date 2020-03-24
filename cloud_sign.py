@@ -219,6 +219,21 @@ class AutoSign(object):
 
 	def tphoto_sign(self, activeId):
 		"""拍照签到"""
+		url = "https://pan-yz.chaoxing.com/upload?_token=5d2e8d0aaa92e3701398035f530c4155"
+		payload = {'puid': '80421235'}
+		headers = {
+			'Cookie': 'route=0a371e20663fc5318adffbeed948add0'
+		}
+		try:
+			files = [
+				('file', open('123.jpeg','rb'))
+			]
+			response = requests.request("POST", url, headers=headers, data = payload, files = files)
+			objectId = response.json().get('objectId')
+			print ("Custom image has been upload!")
+		except:
+			objectId = '5712278eff455f9bcd76a85cd95c5de3'
+			print ("Use Daniel Wu photo!")
 		params = {
 			'name': '',
 			'activeId': activeId,
@@ -230,7 +245,7 @@ class AutoSign(object):
 			'fid': '',
 			'appType': '15',
 			'ifTiJiao': '1',
-			'objectId': '5712278eff455f9bcd76a85cd95c5de3'
+			'objectId': objectId
 		}
 		res = self.session.get('https://mobilelearn.chaoxing.com/pptSign/stuSignajax', params=params)
 		print(res.text)
