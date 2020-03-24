@@ -134,7 +134,7 @@ http://passport2.chaoxing.com/login
 # https://mobilelearn.chaoxing.com/widget/sign/pcStuSignController/preSign?activeId=126433134&classId=19047512&courseId=209403053
 ```
 
-### 5、自定义上传照片
+### 5、照片签到
 请保存你需要上传的照片为“123.jpeg”在当前目录下，如果当前目录下没有该文件，则会使用Daniel Wu的照片
 
   [1]: http://assets.z2blog.com/imgbed/2020/03/06/20200306880794.png
